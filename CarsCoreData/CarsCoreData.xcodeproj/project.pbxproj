@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		66E85BF025F0528000051C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E85BEF25F0528000051C85 /* AppDelegate.swift */; };
 		66E85BF225F0528000051C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E85BF125F0528000051C85 /* SceneDelegate.swift */; };
-		66E85BF425F0528000051C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E85BF325F0528000051C85 /* ViewController.swift */; };
 		66E85BF725F0528000051C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E85BF525F0528000051C85 /* Main.storyboard */; };
 		66E85BFA25F0528000051C85 /* CarsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E85BF825F0528000051C85 /* CarsCoreData.xcdatamodeld */; };
 		66E85BFC25F0528300051C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E85BFB25F0528300051C85 /* Assets.xcassets */; };
 		66E85BFF25F0528300051C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E85BFD25F0528300051C85 /* LaunchScreen.storyboard */; };
+		66E85C0B25F053BA00051C85 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E85C0A25F053BA00051C85 /* CarsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66E85BEC25F0528000051C85 /* CarsCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E85BEF25F0528000051C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E85BF125F0528000051C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		66E85BF325F0528000051C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		66E85BF625F0528000051C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66E85BF925F0528000051C85 /* CarsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		66E85BFB25F0528300051C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66E85BFE25F0528300051C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66E85C0025F0528300051C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E85C0A25F053BA00051C85 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				66E85BEF25F0528000051C85 /* AppDelegate.swift */,
 				66E85BF125F0528000051C85 /* SceneDelegate.swift */,
-				66E85BF325F0528000051C85 /* ViewController.swift */,
+				66E85C0A25F053BA00051C85 /* CarsViewController.swift */,
 				66E85BF525F0528000051C85 /* Main.storyboard */,
 				66E85BFB25F0528300051C85 /* Assets.xcassets */,
 				66E85BFD25F0528300051C85 /* LaunchScreen.storyboard */,
@@ -140,10 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66E85BF425F0528000051C85 /* ViewController.swift in Sources */,
 				66E85BFA25F0528000051C85 /* CarsCoreData.xcdatamodeld in Sources */,
 				66E85BF025F0528000051C85 /* AppDelegate.swift in Sources */,
 				66E85BF225F0528000051C85 /* SceneDelegate.swift in Sources */,
+				66E85C0B25F053BA00051C85 /* CarsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import CoreData
 
 class CarsViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet weak var markLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var carImageView: UIImageView!
+    @IBOutlet weak var lastTimeStartedLabel: UILabel!
+    @IBOutlet weak var numberOfTripsLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var myChoiceImageView: UIImageView!
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {
+        //
     }
-    */
+    
+    @IBAction func startEnginePressed(_ sender: UIButton) {
+        //
+    }
+    
+    @IBAction func rateItPressed(_ sender: UIButton) {
+        // 
+    }
+    
+    // MARK: - Helpers
+
 
 }
