@@ -14,6 +14,7 @@
 		66E85BFC25F0528300051C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E85BFB25F0528300051C85 /* Assets.xcassets */; };
 		66E85BFF25F0528300051C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E85BFD25F0528300051C85 /* LaunchScreen.storyboard */; };
 		66E85C0B25F053BA00051C85 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E85C0A25F053BA00051C85 /* CarsViewController.swift */; };
+		66F3483925F10516001AC54F /* DataCars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66F3483825F10516001AC54F /* DataCars.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		66E85BFE25F0528300051C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66E85C0025F0528300051C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66E85C0A25F053BA00051C85 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
+		66F3483825F10516001AC54F /* DataCars.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DataCars.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				66E85BFB25F0528300051C85 /* Assets.xcassets */,
 				66E85BFD25F0528300051C85 /* LaunchScreen.storyboard */,
 				66E85C0025F0528300051C85 /* Info.plist */,
+				66F3483825F10516001AC54F /* DataCars.plist */,
 				66E85BF825F0528000051C85 /* CarsCoreData.xcdatamodeld */,
 			);
 			path = CarsCoreData;
@@ -130,6 +133,7 @@
 				66E85BFF25F0528300051C85 /* LaunchScreen.storyboard in Resources */,
 				66E85BFC25F0528300051C85 /* Assets.xcassets in Resources */,
 				66E85BF725F0528000051C85 /* Main.storyboard in Resources */,
+				66F3483925F10516001AC54F /* DataCars.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
