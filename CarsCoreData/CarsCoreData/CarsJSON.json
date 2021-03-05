@@ -1,0 +1,72 @@
+[
+    {
+        "mark": "KIA",
+        "model": "K5",
+        "imageUrl": "https://cloud.mail.ru/public/Famj/HpSDNikZj",
+        "tintColor": [
+            "red": 11,
+            "green": 46,
+            "blue": 113
+        ],
+        "lastStarted": "2021-03-04T12:41:25Z",
+        "rating": 8,
+        "numberTrips": 10,
+        "myChoice": true
+    },
+    {
+        "mark": "Mazda",
+        "model": "Mazda6",
+        "imageUrl": "https://cloud.mail.ru/public/ULGE/53niHJwP4",
+        "tintColor": [
+            "red": 165,
+            "green": 52,
+            "blue": 64
+        ],
+        "lastStarted": "2021-02-14T18:41:25Z",
+        "rating": 7,
+        "numberTrips": 18,
+        "myChoice": false
+    },
+    {
+        "mark": "Toyota",
+        "model": "Camry",
+        "imageUrl": "https://cloud.mail.ru/public/LeEY/NdkvcntDw",
+        "tintColor": [
+            "red": 220,
+            "green": 232,
+            "blue": 231
+        ],
+        "lastStarted": "2021-01-05T14:21:25Z",
+        "rating": 10,
+        "numberTrips": 23,
+        "myChoice": false
+    },
+    {
+        "mark": "Hundai",
+        "model": "Sonata",
+        "imageUrl": "https://cloud.mail.ru/public/T4tP/mdMcHFpRA",
+        "tintColor": [
+            "red": 144,
+            "green": 138,
+            "blue": 138
+        ],
+        "lastStarted": "2020-12-07T19:41:25Z",
+        "rating": 5,
+        "numberTrips": 4,
+        "myChoice": false
+    },
+    {
+        "mark": "BMW",
+        "model": "X4",
+        "imageUrl": "https://cloud.mail.ru/public/D5Lf/962mxmHWv",
+        "tintColor": [
+            "red": 17,
+            "green": 32,
+            "blue": 44
+        ],
+        "lastStarted": "2021-03-03T20:41:25Z",
+        "rating": 9,
+        "numberTrips": 34,
+        "myChoice": false
+    }
+]
