@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-Gp-H7s">
-                                <rect key="frame" x="25.5" y="323" width="363.5" height="58"/>
+                                <rect key="frame" x="45.5" y="323" width="323.5" height="58"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="328-nb-9vD">
-                                        <rect key="frame" x="0.0" y="0.0" width="363.5" height="24"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="328-nb-9vD">
+                                        <rect key="frame" x="0.0" y="0.0" width="323.5" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time started:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLy-Az-BBJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="152.5" height="24"/>
@@ -30,7 +30,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: X / 10.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gW-1G-0pu">
-                                                <rect key="frame" x="232.5" y="0.0" width="131" height="24"/>
+                                                <rect key="frame" x="192.5" y="0.0" width="131" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -84,21 +84,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-gF-XZx">
-                                <rect key="frame" x="33.5" y="742" width="347" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-gF-XZx">
+                                <rect key="frame" x="37" y="732" width="340" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJB-JH-R3a">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                        <state key="normal" title="Start Engine"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" red="0.21211605141412226" green="0.40115685545086976" blue="0.54319260606519881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Vkt-e7-O3U"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bkI-N5-xf9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Start Engine">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="startEnginePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ibX-HE-DWX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8L-jr-UkB">
-                                        <rect key="frame" x="296" y="0.0" width="51" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                        <state key="normal" title="Rate"/>
+                                        <rect key="frame" x="190" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" red="0.21211605140000001" green="0.40115685550000002" blue="0.54319260609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="8hp-zm-cix"/>
+                                            <constraint firstAttribute="height" constant="40" id="9zt-sE-ezb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Rate">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="rateItPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gvz-T8-63R"/>
                                         </connections>
@@ -122,7 +148,7 @@
                             <constraint firstItem="MbE-WX-uV8" firstAttribute="top" secondItem="u3S-bU-v70" secondAttribute="bottom" constant="40" id="dSo-iR-gNs"/>
                             <constraint firstItem="aVu-nu-pZD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="efE-SR-zdW"/>
                             <constraint firstItem="MbE-WX-uV8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ehN-Xo-lMo"/>
-                            <constraint firstItem="rWi-gF-XZx" firstAttribute="top" secondItem="MbE-WX-uV8" secondAttribute="bottom" constant="100" id="fPE-Pc-atC"/>
+                            <constraint firstItem="rWi-gF-XZx" firstAttribute="top" secondItem="MbE-WX-uV8" secondAttribute="bottom" constant="90" id="fPE-Pc-atC"/>
                             <constraint firstItem="u3S-bU-v70" firstAttribute="top" secondItem="tfl-Gp-H7s" secondAttribute="bottom" constant="50" id="kmM-Wb-eGN"/>
                             <constraint firstItem="RiH-jE-ynO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l0q-UQ-B0q"/>
                             <constraint firstItem="8gk-bm-k11" firstAttribute="top" secondItem="aVu-nu-pZD" secondAttribute="bottom" constant="10" id="lfP-l6-42j"/>
