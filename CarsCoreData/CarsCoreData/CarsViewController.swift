@@ -12,7 +12,7 @@ class CarsViewController: UIViewController {
     
     // MARK: - Properties
     
-    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var context: NSManagedObjectContext!
     
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
