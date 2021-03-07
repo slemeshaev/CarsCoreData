@@ -33,7 +33,7 @@
 		<key>model</key>
 		<string>Mazda6</string>
 		<key>imageName</key>
-		<string>Mazda6.jpg</string>
+		<string>Mazda_6.jpg</string>
 		<key>tintColor</key>
 		<dict>
 			<key>red</key>

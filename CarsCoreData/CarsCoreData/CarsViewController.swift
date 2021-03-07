@@ -18,7 +18,18 @@ class CarsViewController: UIViewController {
     @IBOutlet weak var lastTimeStartedLabel: UILabel!
     @IBOutlet weak var numberOfTripsLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl! {
+        didSet {
+            updateSegmentedControl()
+            segmentedControl.selectedSegmentTintColor = .white
+            
+            let whiteTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            let blackTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+            
+            UISegmentedControl.appearance().setTitleTextAttributes(whiteTitleTextAttributes, for: .normal)
+            UISegmentedControl.appearance().setTitleTextAttributes(blackTitleTextAttributes, for: .selected)
+        }
+    }
     @IBOutlet weak var myChoiceImageView: UIImageView!
     
     var context: NSManagedObjectContext!
@@ -35,13 +46,12 @@ class CarsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDataFromFile()
-        insertData()
     }
     
     // MARK: - Actions
     
     @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {
-        //
+        updateSegmentedControl()
     }
     
     @IBAction func startEnginePressed(_ sender: UIButton) {
@@ -143,15 +153,16 @@ class CarsViewController: UIViewController {
         myChoiceImageView.isHidden = !(car.myChoice)
     }
     
-    private func insertData() {
+    private func updateSegmentedControl() {
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
-        guard let mark = segmentedControl.titleForSegment(at: 0) else { return }
+        guard let mark = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) else { return }
         fetchRequest.predicate = NSPredicate(format: "mark == %@", mark)
         
         do {
             let results = try context.fetch(fetchRequest)
-            car = results.first
-            insertDataFrom(selectedCar: car)
+            if let car = results.first {
+                insertDataFrom(selectedCar: car)
+            }
         } catch let error as NSError {
             print(error.localizedDescription)
         }
@@ -171,5 +182,21 @@ class CarsViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    private func removeAllCars() {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        if let objects = try? context.fetch(fetchRequest) {
+            for object in objects {
+                context.delete(object)
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+
     
 }
