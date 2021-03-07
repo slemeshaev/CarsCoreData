@@ -12,8 +12,6 @@ class CarsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var context: NSManagedObjectContext!
-    
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
@@ -23,10 +21,21 @@ class CarsViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var myChoiceImageView: UIImageView!
     
+    var context: NSManagedObjectContext!
+    
+    lazy var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .short
+        df.timeStyle = .none
+        return df
+    }()
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDataFromFile()
+        insertData()
     }
     
     // MARK: - Actions
@@ -82,8 +91,8 @@ class CarsViewController: UIViewController {
             
             car.lastStarted = carDictionary["lastStarted"] as? Date
             car.rating = carDictionary["rating"] as! Double
-            car.timesDriven = carDictionary["timesDriven"] as! Int16
-            car.myChoice = carDictionary["moChoice"] as! Bool
+            car.timesDriven = carDictionary["numberTrips"] as! Int16
+            car.myChoice = carDictionary["myChoice"] as! Bool
             
             if let colorDictionary = carDictionary["tintColor"] as? [String: Float] {
                 car.tintColor = getColor(colorDictionary: colorDictionary)
@@ -98,6 +107,34 @@ class CarsViewController: UIViewController {
               let blue = colorDictionary["blue"] else { return UIColor() }
         return UIColor(red: CGFloat(red / 255), green: CGFloat(green / 255), blue: CGFloat(blue / 255), alpha: 1.0)
     }
-
-
+    
+    private func insertDataFrom(selectedCar car: Car) {
+        markLabel.text = car.mark
+        modelLabel.text = car.model
+        if let carImage = car.imageData {
+            carImageView.image = UIImage(data: carImage)
+        }
+        if let lastStarted = car.lastStarted {
+            lastTimeStartedLabel.text = "Last time started: \(dateFormatter.string(from: lastStarted))"
+        }
+        numberOfTripsLabel.text = "Number of trips: \(car.timesDriven)"
+        segmentedControl.tintColor = car.tintColor as? UIColor
+        ratingLabel.text = "Rating: \(car.rating) / 10"
+        myChoiceImageView.isHidden = !(car.myChoice)
+    }
+    
+    private func insertData() {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        guard let mark = segmentedControl.titleForSegment(at: 0) else { return }
+        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let car = results.first {
+                insertDataFrom(selectedCar: car)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
 }
