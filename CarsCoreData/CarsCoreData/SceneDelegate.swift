@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController = window?.rootViewController as! CarsViewController
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         viewController.context = context
+        window?.overrideUserInterfaceStyle = .light
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
