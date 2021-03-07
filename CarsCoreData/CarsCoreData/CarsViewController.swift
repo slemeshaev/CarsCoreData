@@ -22,7 +22,7 @@ class CarsViewController: UIViewController {
     @IBOutlet weak var myChoiceImageView: UIImageView!
     
     var context: NSManagedObjectContext!
-    
+    var car: Car!
     lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .short
@@ -45,11 +45,31 @@ class CarsViewController: UIViewController {
     }
     
     @IBAction func startEnginePressed(_ sender: UIButton) {
-        //
+        car.timesDriven += 1
+        car.lastStarted = Date()
+        
+        do {
+            try context.save()
+            insertDataFrom(selectedCar: car)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func rateItPressed(_ sender: UIButton) {
-        // 
+        let alertController = UIAlertController(title: "Rate it", message: "Rate this car please", preferredStyle: .alert)
+        let rateAction = UIAlertAction(title: "Rate", style: .cancel) { action in
+            if let text = alertController.textFields?.first?.text {
+                self.update(rating: (text as NSString).doubleValue)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        alertController.addTextField { textField in
+            textField.keyboardType = .numberPad
+        }
+        alertController.addAction(rateAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
     
     // MARK: - Helpers
@@ -118,8 +138,8 @@ class CarsViewController: UIViewController {
             lastTimeStartedLabel.text = "Last time started: \(dateFormatter.string(from: lastStarted))"
         }
         numberOfTripsLabel.text = "Number of trips: \(car.timesDriven)"
-        segmentedControl.tintColor = car.tintColor as? UIColor
-        ratingLabel.text = "Rating: \(car.rating) / 10"
+        segmentedControl.backgroundColor = car.tintColor as? UIColor
+        ratingLabel.text = "Rating: \(car.rating) / 10.0"
         myChoiceImageView.isHidden = !(car.myChoice)
     }
     
@@ -130,11 +150,26 @@ class CarsViewController: UIViewController {
         
         do {
             let results = try context.fetch(fetchRequest)
-            if let car = results.first {
-                insertDataFrom(selectedCar: car)
-            }
+            car = results.first
+            insertDataFrom(selectedCar: car)
         } catch let error as NSError {
             print(error.localizedDescription)
         }
     }
+    
+    private func update(rating: Double) {
+        car.rating = rating
+        
+        do {
+            try context.save()
+            insertDataFrom(selectedCar: car)
+        } catch let error as NSError {
+            let alertController = UIAlertController(title: "Wrong value", message: "Wrong input", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+            print(error.localizedDescription)
+        }
+    }
+    
 }
